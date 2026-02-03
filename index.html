@@ -172,9 +172,21 @@
     </section>
 
 
-    <footer id="footer">© 2026 d1oxi</footer>
-  </div>
+    </footer>
+  © 2026 d1oxi
+   <div id="counter" style="margin-top:6px; color: var(--accent); font-size:0.85rem;">
+     Views: 0
+   </div>
+  </footer>
 
+  <script>
+    fetch('https://api.countapi.xyz/hit/d1oxi-portfolio.github.io/visits')
+      .then(res => res.json())
+      .then(res => {
+        document.getElementById('counter').innerText = 'Views: ' + res.value;
+      });
+  </script>
+  
   <!-- MATRIX SCRIPT -->
   <script>
     const canvas = document.getElementById("matrix");
@@ -253,3 +265,4 @@
 
 </body>
 </html>
+
